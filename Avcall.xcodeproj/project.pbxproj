@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06286BE31DB74F3D00E6C979 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 06286BE21DB74F3D00E6C979 /* NSString+MD5.m */; };
 		06C4D0DB1D928E0E0013B865 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4D0DA1D928E0E0013B865 /* main.m */; };
 		06C4D2171D92901A0013B865 /* EMAudioPlayerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4D0FD1D92901A0013B865 /* EMAudioPlayerUtil.m */; };
 		06C4D2181D92901A0013B865 /* EMAudioRecorderUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4D0FF1D92901A0013B865 /* EMAudioRecorderUtil.m */; };
@@ -145,7 +146,7 @@
 		06C4D37F1D9293540013B865 /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4D3161D9293540013B865 /* CallViewController.m */; };
 		06C4D3801D9293540013B865 /* ConversationListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4D31A1D9293540013B865 /* ConversationListController.m */; };
 		06C4D3811D9293540013B865 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4D31D1D9293540013B865 /* ChatViewController.m */; };
-		06C4D3821D9293540013B865 /* ChatDemoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4D31F1D9293540013B865 /* ChatDemoHelper.m */; };
+		06C4D3821D9293540013B865 /* AvcallHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4D31F1D9293540013B865 /* AvcallHelper.m */; };
 		06C4D3831D9293540013B865 /* ChatGroupDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4D3221D9293540013B865 /* ChatGroupDetailViewController.m */; };
 		06C4D3841D9293540013B865 /* ContactSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4D3241D9293540013B865 /* ContactSelectionViewController.m */; };
 		06C4D3851D9293540013B865 /* ContactView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C4D3261D9293540013B865 /* ContactView.m */; };
@@ -348,6 +349,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06286BE21DB74F3D00E6C979 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		06286BE41DB74F6200E6C979 /* NSString+MD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		06C4D0D61D928E0E0013B865 /* Avcall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Avcall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06C4D0DA1D928E0E0013B865 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		06C4D0F31D92901A0013B865 /* EaseUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseUI.h; sourceTree = "<group>"; };
@@ -676,8 +679,8 @@
 		06C4D31A1D9293540013B865 /* ConversationListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationListController.m; sourceTree = "<group>"; };
 		06C4D31C1D9293540013B865 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		06C4D31D1D9293540013B865 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
-		06C4D31E1D9293540013B865 /* ChatDemoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatDemoHelper.h; sourceTree = "<group>"; };
-		06C4D31F1D9293540013B865 /* ChatDemoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatDemoHelper.m; sourceTree = "<group>"; };
+		06C4D31E1D9293540013B865 /* AvcallHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvcallHelper.h; sourceTree = "<group>"; };
+		06C4D31F1D9293540013B865 /* AvcallHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvcallHelper.m; sourceTree = "<group>"; };
 		06C4D3211D9293540013B865 /* ChatGroupDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatGroupDetailViewController.h; sourceTree = "<group>"; };
 		06C4D3221D9293540013B865 /* ChatGroupDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatGroupDetailViewController.m; sourceTree = "<group>"; };
 		06C4D3231D9293540013B865 /* ContactSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactSelectionViewController.h; sourceTree = "<group>"; };
@@ -1758,8 +1761,8 @@
 				06C4D3121D9293540013B865 /* LoginViewController.xib */,
 				06C4D3141D9293540013B865 /* Call */,
 				06C4D3171D9293540013B865 /* Chat */,
-				06C4D31E1D9293540013B865 /* ChatDemoHelper.h */,
-				06C4D31F1D9293540013B865 /* ChatDemoHelper.m */,
+				06C4D31E1D9293540013B865 /* AvcallHelper.h */,
+				06C4D31F1D9293540013B865 /* AvcallHelper.m */,
 				06C4D3201D9293540013B865 /* ChatGroup */,
 				06C4D3391D9293540013B865 /* Chatroom */,
 				06C4D3401D9293540013B865 /* Contacts */,
@@ -2013,6 +2016,8 @@
 				06C4D3CE1D92936B0013B865 /* UIResponder+Router.m */,
 				06C4D3CF1D92936B0013B865 /* UIViewController+HUD.h */,
 				06C4D3D01D92936B0013B865 /* UIViewController+HUD.m */,
+				06286BE21DB74F3D00E6C979 /* NSString+MD5.m */,
+				06286BE41DB74F6200E6C979 /* NSString+MD5.h */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -2618,6 +2623,7 @@
 				06C4D2711D92901A0013B865 /* EaseLocationViewController.m in Sources */,
 				06C4D3C81D9293600013B865 /* TTGlobalUICommon.m in Sources */,
 				06C4D2771D92901A0013B865 /* EaseBaseMessageCell.m in Sources */,
+				06286BE31DB74F3D00E6C979 /* NSString+MD5.m in Sources */,
 				06C4D3961D9293540013B865 /* ApplyFriendCell.m in Sources */,
 				06C4D39F1D9293540013B865 /* EMRobotChatTextBubbleView.m in Sources */,
 				06C4D2FF1D9293460013B865 /* EMSearchBar.m in Sources */,
@@ -2634,7 +2640,7 @@
 				06C4D2341D92901A0013B865 /* MJRefreshConst.m in Sources */,
 				06C4D27D1D92901B0013B865 /* EaseBubbleView+Image.m in Sources */,
 				06C4D38F1D9293540013B865 /* ChatroomDetailViewController.m in Sources */,
-				06C4D3821D9293540013B865 /* ChatDemoHelper.m in Sources */,
+				06C4D3821D9293540013B865 /* AvcallHelper.m in Sources */,
 				06C4D3A91D9293540013B865 /* SettingsViewController.m in Sources */,
 				06C4D2401D92901A0013B865 /* DACircularProgressView.m in Sources */,
 				06C4D3931D9293540013B865 /* ContactListViewController.m in Sources */,

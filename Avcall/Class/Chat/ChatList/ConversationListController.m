@@ -20,7 +20,7 @@
 #import "UserProfileManager.h"
 #import "RealtimeSearchUtil.h"
 #import "RedPacketChatViewController.h"
-#import "ChatDemoHelper.h"
+#import "AvcallHelper.h"
 
 @implementation EMConversation (search)
 

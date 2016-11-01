@@ -10,7 +10,7 @@
  * from Hyphenate Inc.
  */
 
-#import "ChatDemoHelper.h"
+#import "AvcallHelper.h"
 
 #import "AppDelegate.h"
 #import "ApplyViewController.h"
@@ -23,11 +23,11 @@
 
 #import "EaseSDKHelper.h"
 
-#if DEMO_CALL == 1
+#if AVCALL_CALL == 1
 
 #import "CallViewController.h"
 
-@interface ChatDemoHelper()<EMCallManagerDelegate>
+@interface AvcallHelper()<EMCallManagerDelegate>
 {
     NSTimer *_callTimer;
 }
@@ -36,15 +36,15 @@
 
 #endif
 
-static ChatDemoHelper *helper = nil;
+static AvcallHelper *helper = nil;
 
-@implementation ChatDemoHelper
+@implementation AvcallHelper
 
 + (instancetype)shareHelper
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        helper = [[ChatDemoHelper alloc] init];
+        helper = [[AvcallHelper alloc] init];
     });
     return helper;
 }
@@ -57,7 +57,7 @@ static ChatDemoHelper *helper = nil;
     [[EMClient sharedClient].roomManager removeDelegate:self];
     [[EMClient sharedClient].chatManager removeDelegate:self];
     
-#if DEMO_CALL == 1
+#if AVCALL_CALL == 1
     [[EMClient sharedClient].callManager removeDelegate:self];
 #endif
 }
@@ -83,7 +83,7 @@ static ChatDemoHelper *helper = nil;
     [[EMClient sharedClient].roomManager addDelegate:self delegateQueue:nil];
     [[EMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
     
-#if DEMO_CALL == 1
+#if AVCALL_CALL == 1
     [[EMClient sharedClient].callManager addDelegate:self delegateQueue:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(makeCall:) name:KNOTIFICATION_CALL object:nil];
@@ -488,7 +488,7 @@ static ChatDemoHelper *helper = nil;
 
 #pragma mark - EMCallManagerDelegate
 
-#if DEMO_CALL == 1
+#if AVCALL_CALL == 1
 
 - (void)didReceiveCallIncoming:(EMCallSession *)aSession
 {
@@ -603,7 +603,7 @@ static ChatDemoHelper *helper = nil;
 
 #pragma mark - public 
 
-#if DEMO_CALL == 1
+#if AVCALL_CALL == 1
 
 - (void)makeCall:(NSNotification*)notify
 {
@@ -644,7 +644,7 @@ static ChatDemoHelper *helper = nil;
     
     __weak typeof(self) weakSelf = self;
     void (^completionBlock)(EMCallSession *, EMError *) = ^(EMCallSession *aCallSession, EMError *aError){
-        ChatDemoHelper *strongSelf = weakSelf;
+        AvcallHelper *strongSelf = weakSelf;
         if (strongSelf) {
             if (!aError && aCallSession) {
                 strongSelf.callSession = aCallSession;
@@ -746,7 +746,7 @@ static ChatDemoHelper *helper = nil;
     
     [[EMClient sharedClient] logout:NO];
     
-#if DEMO_CALL == 1
+#if AVCALL_CALL == 1
     [self hangupCallWithReason:EMCallEndReasonFailed];
 #endif
 }

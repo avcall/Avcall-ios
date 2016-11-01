@@ -15,7 +15,7 @@
 #import "RedPacketUserConfig.h"
 #import "RedpacketOpenConst.h"
 #import "YZHRedpacketBridge.h"
-#import "ChatDemoHelper.h"
+#import "AvcallHelper.h"
 #import "UserProfileManager.h"
 
 

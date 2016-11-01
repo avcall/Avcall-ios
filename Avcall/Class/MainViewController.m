@@ -18,7 +18,7 @@
 #import "UserProfileManager.h"
 #import "ConversationListController.h"
 #import "ContactListViewController.h"
-#import "ChatDemoHelper.h"
+#import "AvcallHelper.h"
 #import "RedPacketChatViewController.h"
 
 //两次提示的默认间隔
@@ -27,7 +27,7 @@ static NSString *kMessageType = @"MessageType";
 static NSString *kConversationChatter = @"ConversationChatter";
 static NSString *kGroupName = @"GroupName";
 
-#if DEMO_CALL == 1
+#if AVCALL_CALL == 1
 @interface MainViewController () <UIAlertViewDelegate, EMCallManagerDelegate>
 #else
 @interface MainViewController () <UIAlertViewDelegate>
@@ -81,8 +81,8 @@ static NSString *kGroupName = @"GroupName";
     [self setupUnreadMessageCount];
     [self setupUntreatedApplyCount];
     
-    [ChatDemoHelper shareHelper].contactViewVC = _contactsVC;
-    [ChatDemoHelper shareHelper].conversationListVC = _chatListVC;
+    [AvcallHelper shareHelper].contactViewVC = _contactsVC;
+    [AvcallHelper shareHelper].conversationListVC = _chatListVC;
 }
 
 - (void)didReceiveMemoryWarning

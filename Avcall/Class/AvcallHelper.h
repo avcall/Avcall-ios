@@ -21,15 +21,15 @@
 #define kAtYouMessage           1
 #define kAtAllMessage           2
 
-#if DEMO_CALL == 1
+#if AVCALL_CALL == 1
 
 #import "CallViewController.h"
 
-@interface ChatDemoHelper : NSObject <EMClientDelegate,EMChatManagerDelegate,EMContactManagerDelegate,EMGroupManagerDelegate,EMChatroomManagerDelegate,EMCallManagerDelegate>
+@interface AvcallHelper : NSObject <EMClientDelegate,EMChatManagerDelegate,EMContactManagerDelegate,EMGroupManagerDelegate,EMChatroomManagerDelegate,EMCallManagerDelegate>
 
 #else
 
-@interface ChatDemoHelper : NSObject <EMClientDelegate,EMChatManagerDelegate,EMContactManagerDelegate,EMGroupManagerDelegate,EMChatroomManagerDelegate>
+@interface AvcallHelper : NSObject <EMClientDelegate,EMChatManagerDelegate,EMContactManagerDelegate,EMGroupManagerDelegate,EMChatroomManagerDelegate>
 
 #endif
 
@@ -41,7 +41,7 @@
 
 @property (nonatomic, weak) ChatViewController *chatVC;
 
-#if DEMO_CALL == 1
+#if AVCALL_CALL == 1
 
 @property (strong, nonatomic) EMCallSession *callSession;
 @property (strong, nonatomic) CallViewController *callController;
@@ -56,7 +56,7 @@
 
 - (void)asyncConversationFromDB;
 
-#if DEMO_CALL == 1
+#if AVCALL_CALL == 1
 
 - (void)makeCallWithUsername:(NSString *)aUsername
                      isVideo:(BOOL)aIsVideo;

@@ -12,7 +12,8 @@
 
 #import "LoginViewController.h"
 #import "EMError.h"
-#import "ChatDemoHelper.h"
+#import "NSString+MD5.h"
+#import "AvcallHelper.h"
 #import "MBProgressHUD.h"
 #import "RedPacketUserConfig.h"
 
@@ -61,7 +62,7 @@
     
 //    [_useIpSwitch setOn:[[EMClient sharedClient].options enableDnsConfig] animated:YES];
     
-    self.title = NSLocalizedString(@"AppName", @"EaseMobDemo");
+    self.title = NSLocalizedString(@"AppName", @"Avcall");
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -145,9 +146,9 @@
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                     [[EMClient sharedClient] migrateDatabaseToLatestSDK];
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [[ChatDemoHelper shareHelper] asyncGroupFromServer];
-                        [[ChatDemoHelper shareHelper] asyncConversationFromDB];
-                        [[ChatDemoHelper shareHelper] asyncPushOptions];
+                        [[AvcallHelper shareHelper] asyncGroupFromServer];
+                        [[AvcallHelper shareHelper] asyncConversationFromDB];
+                        [[AvcallHelper shareHelper] asyncPushOptions];
                         [MBProgressHUD hideAllHUDsForView:weakself.view animated:YES];
                         //发送自动登陆状态通知
                         [[NSNotificationCenter defaultCenter] postNotificationName:KNOTIFICATION_LOGINCHANGE object:@([[EMClient sharedClient] isLoggedIn])];
@@ -227,7 +228,8 @@
         [self loginWithUsername:_usernameTextField.text password:_passwordTextField.text];
 #endif
          */
-        [self loginWithUsername:_usernameTextField.text password:_passwordTextField.text];
+        NSString *md5Password = [self.passwordTextField.text MD5];
+        [self loginWithUsername:_usernameTextField.text password:md5Password];
     }
 }
 

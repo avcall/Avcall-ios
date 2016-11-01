@@ -23,6 +23,6 @@
     #import "EMSDKFull.h"
     #import "EaseUI.h"
 
-#define DEMO_CALL 1
+#define AVCALL_CALL 1
 
 #endif

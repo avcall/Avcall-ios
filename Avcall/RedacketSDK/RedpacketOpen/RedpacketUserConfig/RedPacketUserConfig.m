@@ -10,7 +10,7 @@
 #import "UserProfileManager.h"
 #import "YZHRedpacketBridge.h"
 #import "RedpacketMessageModel.h"
-#import "ChatDemoHelper.h"
+#import "AvcallHelper.h"
 
 /**
  *  环信IMToken过期
@@ -288,7 +288,7 @@ static RedPacketUserConfig *__sharedConfig__ = nil;
                     /**
                      *  插入数据库
                      */
-                    ConversationListController *listVc = [ChatDemoHelper shareHelper].conversationListVC;
+                    ConversationListController *listVc = [AvcallHelper shareHelper].conversationListVC;
                     if (listVc) {
                         for (id <IConversationModel> model in [listVc.dataArray copy]) {
                             EMConversation *conversation = model.conversation;

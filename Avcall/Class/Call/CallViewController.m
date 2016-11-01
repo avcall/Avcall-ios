@@ -14,7 +14,7 @@
 #import <CoreTelephony/CTCall.h>
 #import "CallViewController.h"
 
-#import "ChatDemoHelper.h"
+#import "AvcallHelper.h"
 
 @interface CallViewController ()
 {
@@ -453,7 +453,7 @@
 
 - (void)answerAction
 {
-#if DEMO_CALL == 1
+#if AVCALL_CALL == 1
     [self _stopRing];
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     _audioCategory = audioSession.category;
@@ -462,33 +462,33 @@
         [audioSession setActive:YES error:nil];
     }
     
-    [[ChatDemoHelper shareHelper] answerCall];
+    [[AvcallHelper shareHelper] answerCall];
 #endif
 }
 
 - (void)hangupAction
 {
-#if DEMO_CALL == 1
+#if AVCALL_CALL == 1
     [_timeTimer invalidate];
     [self _stopRing];
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:_audioCategory error:nil];
     [audioSession setActive:YES error:nil];
     
-    [[ChatDemoHelper shareHelper] hangupCallWithReason:EMCallEndReasonHangup];
+    [[AvcallHelper shareHelper] hangupCallWithReason:EMCallEndReasonHangup];
 #endif
 }
 
 - (void)rejectAction
 {
-#if DEMO_CALL == 1
+#if AVCALL_CALL == 1
     [_timeTimer invalidate];
     [self _stopRing];
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:_audioCategory error:nil];
     [audioSession setActive:YES error:nil];
     
-    [[ChatDemoHelper shareHelper] hangupCallWithReason:EMCallEndReasonDecline];
+    [[AvcallHelper shareHelper] hangupCallWithReason:EMCallEndReasonDecline];
 #endif
 }
 

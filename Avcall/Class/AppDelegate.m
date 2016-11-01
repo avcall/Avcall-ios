@@ -25,7 +25,7 @@
 
 @end
 
-#define EaseMobAppKey @"easemob-demo#chatdemoui"
+#define EaseMobAppKey @"shiming#avcall"
 
 
 @implementation AppDelegate
@@ -46,9 +46,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     if ([UIDevice currentDevice].systemVersion.floatValue >= 7.0) {
-        [[UINavigationBar appearance] setBarTintColor:RGBACOLOR(30, 167, 252, 1)];
+        [[UINavigationBar appearance] setBarTintColor:RGBACOLOR(226, 74, 74, 1)];
         [[UINavigationBar appearance] setTitleTextAttributes:
-         [NSDictionary dictionaryWithObjectsAndKeys:RGBACOLOR(245, 245, 245, 1), NSForegroundColorAttributeName, [UIFont fontWithName:@ "HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
+         [NSDictionary dictionaryWithObjectsAndKeys:RGBACOLOR(245, 245, 245, 1), NSForegroundColorAttributeName, [UIFont fontWithName:@ "HelveticaNeue-CondensedBlack" size:20.0], NSFontAttributeName, nil]];
     }
     
     // 环信UIdemo中有用到友盟统计crash，您的项目中不需要添加，可忽略此处。
@@ -61,9 +61,9 @@
 #warning SDK注册 APNS文件的名字, 需要与后台上传证书时的名字一一对应
     NSString *apnsCertName = nil;
 #if DEBUG
-    apnsCertName = @"chatdemoui_dev";
+    apnsCertName = @"avcall_dev";
 #else
-    apnsCertName = @"chatdemoui";
+    apnsCertName = @"avcall";
 #endif
     
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];

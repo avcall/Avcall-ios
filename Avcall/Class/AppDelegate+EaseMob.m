@@ -15,7 +15,7 @@
 #import "AppDelegate+Parse.h"
 
 #import "LoginViewController.h"
-#import "ChatDemoHelper.h"
+#import "AvcallHelper.h"
 #import "MBProgressHUD.h"
 
 /**
@@ -42,7 +42,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
                                      apnsCertName:apnsCertName
                                       otherConfig:@{kSDKConfigEnableConsoleLogger:[NSNumber numberWithBool:YES],@"easeSandBox":[NSNumber numberWithBool:[self isSpecifyServer]]}];
     
-    [ChatDemoHelper shareHelper];
+    [AvcallHelper shareHelper];
     
     BOOL isAutoLogin = [EMClient sharedClient].isAutoLogin;
     if (isAutoLogin){
@@ -93,18 +93,18 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
         // 环信UIdemo中有用到Parse，您的项目中不需要添加，可忽略此处
         [self initParse];
         
-        [ChatDemoHelper shareHelper].mainVC = self.mainController;
+        [AvcallHelper shareHelper].mainVC = self.mainController;
         
-        [[ChatDemoHelper shareHelper] asyncGroupFromServer];
-        [[ChatDemoHelper shareHelper] asyncConversationFromDB];
-        [[ChatDemoHelper shareHelper] asyncPushOptions];
+        [[AvcallHelper shareHelper] asyncGroupFromServer];
+        [[AvcallHelper shareHelper] asyncConversationFromDB];
+        [[AvcallHelper shareHelper] asyncPushOptions];
     }
     else{//登陆失败加载登陆页面控制器
         if (self.mainController) {
             [self.mainController.navigationController popToRootViewControllerAnimated:NO];
         }
         self.mainController = nil;
-        [ChatDemoHelper shareHelper].mainVC = nil;
+        [AvcallHelper shareHelper].mainVC = nil;
         
         LoginViewController *loginController = [[LoginViewController alloc] init];
         navigationController = [[UINavigationController alloc] initWithRootViewController:loginController];
