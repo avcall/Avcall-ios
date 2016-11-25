@@ -116,16 +116,14 @@ static NSString *kGroupName = @"GroupName";
 
 - (void)setupSubviews
 {
-    self.tabBar.backgroundImage = [[UIImage imageNamed:@"tabbarBackground"] stretchableImageWithLeftCapWidth:25 topCapHeight:25];
-    self.tabBar.selectionIndicatorImage = [[UIImage imageNamed:@"tabbarSelectBg"] stretchableImageWithLeftCapWidth:25 topCapHeight:25];
-    
+    self.tabBar.backgroundColor = [UIColor whiteColor];
+
     _chatListVC = [[ConversationListController alloc] initWithNibName:nil bundle:nil];
     [_chatListVC networkChanged:_connectionState];
     _chatListVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"title.conversation", @"Conversations")
                                                            image:nil
                                                              tag:0];
-    [_chatListVC.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tabbar_chatsHL"]
-                         withFinishedUnselectedImage:[UIImage imageNamed:@"tabbar_chats"]];
+    [_chatListVC.tabBarItem setFinishedSelectedImage:[[UIImage imageNamed:@"conversation_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] withFinishedUnselectedImage:[[UIImage imageNamed:@"conversation_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [self unSelectedTapTabBarItems:_chatListVC.tabBarItem];
     [self selectedTapTabBarItems:_chatListVC.tabBarItem];
     
@@ -133,8 +131,8 @@ static NSString *kGroupName = @"GroupName";
     _contactsVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"title.addressbook", @"AddressBook")
                                                            image:nil
                                                              tag:1];
-    [_contactsVC.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tabbar_contactsHL"]
-                         withFinishedUnselectedImage:[UIImage imageNamed:@"tabbar_contacts"]];
+    [_contactsVC.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"contacts_selected"]
+                         withFinishedUnselectedImage:[UIImage imageNamed:@"contacts_normal"]];
     [self unSelectedTapTabBarItems:_contactsVC.tabBarItem];
     [self selectedTapTabBarItems:_contactsVC.tabBarItem];
     
@@ -142,8 +140,8 @@ static NSString *kGroupName = @"GroupName";
     _settingsVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"title.setting", @"Setting")
                                                            image:nil
                                                              tag:2];
-    [_settingsVC.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tabbar_settingHL"]
-                         withFinishedUnselectedImage:[UIImage imageNamed:@"tabbar_setting"]];
+    [_settingsVC.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"settings_selected"]
+                         withFinishedUnselectedImage:[UIImage imageNamed:@"settings_normal"]];
     _settingsVC.view.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     [self unSelectedTapTabBarItems:_settingsVC.tabBarItem];
     [self selectedTapTabBarItems:_settingsVC.tabBarItem];
@@ -155,7 +153,7 @@ static NSString *kGroupName = @"GroupName";
 -(void)unSelectedTapTabBarItems:(UITabBarItem *)tabBarItem
 {
     [tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                        [UIFont systemFontOfSize:14], UITextAttributeFont,[UIColor whiteColor],UITextAttributeTextColor,
+                                        [UIFont systemFontOfSize:14], UITextAttributeFont, RGBACOLOR(0x9a, 0x9a, 0x9a, 1), UITextAttributeTextColor,
                                         nil] forState:UIControlStateNormal];
 }
 
@@ -163,7 +161,7 @@ static NSString *kGroupName = @"GroupName";
 {
     [tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                         [UIFont systemFontOfSize:14],
-                                        UITextAttributeFont,RGBACOLOR(0x00, 0xac, 0xff, 1),UITextAttributeTextColor,
+                                        UITextAttributeFont,RGBACOLOR(0xe2, 0x4a, 0x4a, 1),UITextAttributeTextColor,
                                         nil] forState:UIControlStateSelected];
 }
 
